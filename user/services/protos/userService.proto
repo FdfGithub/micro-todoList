@@ -1,0 +1,26 @@
+syntax="proto3";
+
+package services;
+
+import "userModels.proto";
+
+//生成的go文件的存放地址;生成的go文件所属的包名
+option go_package="./;protos";
+
+message UserRequest {
+    string UserName = 1;
+    string Password = 2;
+    string PasswordConfirm = 3;
+}
+
+message UesrDetailResponse {
+    UserModel UserDetail = 1;
+    uint32 Code = 2;
+}
+
+service UserService {
+    rpc UserLogin(UserRequest) returns(UesrDetailResponse);
+    rpc UserRegister(UserRequest) returns(UesrDetailResponse);
+}
+
+

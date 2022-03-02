@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package services;
+
+//生成的go文件的存放地址;生成的go文件所属的包名
+option go_package="./;protos";
+
+message UserModel {
+    uint32 ID = 1;
+    string UserName = 2;
+	int64 CreatedAt = 3;
+	int64 UpdatedAt = 4;
+    int64 DeletedAt = 5;
+}
